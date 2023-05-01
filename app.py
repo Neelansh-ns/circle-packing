@@ -4,7 +4,15 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET'])
+def hello():
+    return 'Hello World!'
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return 'Pong'
+    
+@app.route('/circles', methods=['POST'])
 def get_circles():
     """Responds to any HTTP request.
     Args:
